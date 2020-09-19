@@ -2,10 +2,9 @@ import content             from '../../helpers/content';
 import { isObjectLiteral } from 'conjunction-junction';
 import { 
   consentFontColor,
-  consentButton,
   consentButtonHover,
   accentFontColorHover,
-  bgBlue7}    from '../../helpers/common-styles';
+  bgBlue6}    from '../../helpers/common-styles';
 import { privacyAll, 
   privacyOpen }            from '../../helpers/browser/tag-manager';
 import Cookie              from '../graphics/cookie';
@@ -39,7 +38,7 @@ export default function ConsentBanner(props) {
     cursor: 'pointer',
     borderRadius: '2px',
     paddingTop: '3px',
-    backgroundColor: bgBlueDarker,
+    backgroundColor: bgBlue6,
     border: '1px solid #ddd',
     color: '#fff',
     paddingLeft: '15px',
