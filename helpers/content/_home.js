@@ -104,6 +104,7 @@ export const home = {
       elements: [
         '!! Urbanmeadow.org is a passion project for me. !! Urban meadows are low-maintenance, low-impact, high-habitat-value plant communities. My house is behind one. You can have one. Your neighborhood park or school can have one. Urban meadows are great ways to make a meaningful environmental difference, but urban meadows are misunderstood. Urbanmeadow.org seeks to demystify and democratize this landscape type.',
         {
+          element: 'image',
           src: 'https://cdn.buttercms.com/WuTLCfCQT9mY30MZlvtB',
           alt: 'native grasses and wildflowers in a meadow',
           caption: '',

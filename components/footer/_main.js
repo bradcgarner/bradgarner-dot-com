@@ -52,7 +52,7 @@ export default function Footer(props) {
         align-items: center;
         padding: 30px;
 				width: 100%;
-        height: 100px;
+        min-height: 100px;
         background-color: ${bgBlue6};
       }
       @media print {
