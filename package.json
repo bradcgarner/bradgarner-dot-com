@@ -16,6 +16,7 @@
     "build": "next build",
     "start_": "next start -p $PORT",
     "start": "NODE_ENV=production node server.js",
+    "heroku": "NODE_ENV=production node server.js",
     "heroku-postbuild": "npm run build"
   },
   "keywords": [],

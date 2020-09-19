@@ -4,85 +4,15 @@
     <url>
       <loc>http://localhost:3600</loc>
       <lastmod>2020-01-01</lastmod>
-      <changefreq>yearly</changefreq>
+      <changefreq>monthly</changefreq>
       <priority>1.0</priority>
     </url>
    
     <url>
-      <loc>http://localhost:3600/about</loc>
+      <loc>http://localhost:3600/resume</loc>
       <lastmod>2020-09-01</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-   
-    <url>
-      <loc>http://localhost:3600/what-is-an-urban-meadow</loc>
-      <lastmod>2020-09-01</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-   
-    <url>
-      <loc>http://localhost:3600/importance-of-urban-meadows</loc>
-      <lastmod>2020-09-01</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-   
-    <url>
-      <loc>http://localhost:3600/resources</loc>
-      <lastmod>2020-09-20</lastmod>
-      <changefreq>always</changefreq>
-      <priority>0.6</priority>
-    </url>
-   
-    <url>
-      <loc>http://localhost:3600/blog</loc>
-      <lastmod>2020-09-20</lastmod>
-      <changefreq>always</changefreq>
-      <priority>0.6</priority>
-    </url>
-   
-    <url>
-      <loc>http://localhost:3600/gallery-of-urban-meadows</loc>
-      <lastmod>2020-09-01</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-   
-    <url>
-      <loc>http://localhost:3600/plant-an-urban-meadow</loc>
-      <lastmod>2020-09-01</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-   
-    <url>
-      <loc>http://localhost:3600/how-to-grow-an-urban-meadow</loc>
-      <lastmod>2020-09-01</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-    </url>
-   
-    <url>
-      <loc>http://localhost:3600/faq</loc>
-      <lastmod>2020-01-01</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.1</priority>
-    </url>
-   
-    <url>
-      <loc>http://localhost:3600/contact</loc>
-      <lastmod>2020-01-01</lastmod>
       <changefreq>yearly</changefreq>
-      <priority>0.7</priority>
-    </url>
-   
-    <url>
-      <loc>http://localhost:3600/dedication</loc>
-      <lastmod>2020-01-01</lastmod>
-      <changefreq>yearly</changefreq>
-      <priority>0.1</priority>
+      <priority>0.6</priority>
     </url>
    
     <url>
