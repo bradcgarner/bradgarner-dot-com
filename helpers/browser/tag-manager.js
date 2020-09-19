@@ -78,10 +78,15 @@ export const scrollPageFooter  = 'scroll-footer';
 
 // all the following are used as classes where socialIconWrapper is the class
 // format: action network
+export const followFacebook   = 'follow facebook';
+export const followInstagram  = 'follow instagram';
 export const followLinkedin   = 'follow linkedin';
 export const followPinterest  = 'follow pinterest';
+export const followSoundcloud = 'follow soundcloud';
 export const followTwitter    = 'follow twitter';
 export const followYoutube    = 'follow youtube';
+export const followNpm        = 'follow npm';
+export const followGithub     = 'follow github';
 
 export const shareFacebook  = 'share facebook';
 export const shareLinkedin  = 'share linkedin';
@@ -90,4 +95,5 @@ export const shareReddit    = 'share reddit';
 export const shareTumblr    = 'share tumblr';
 export const shareTwitter   = 'share twitter';
 export const shareWhatsapp  = 'share whatsapp';
+export const shareWorkplace = 'share workplace';
 export const shareEmail     = 'share email';

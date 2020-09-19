@@ -202,15 +202,22 @@ export const defUlStyle = `
   margin-left: 30px;
 `;
 export const defEmStyle = `
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
-  color:    #8bad33;
+  color:    ${bgBlue5};
   margin-top: 10px;
   margin-bottom: 10px;
 `;
 
 export const footerElementMargins = `
   margin: 0 20px 50px 20px;
+`;
+
+export const followStyle = `
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 100%;
 `;
 
 // @@@@@@@@ STATIC PAGES @@@@@@@

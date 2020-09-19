@@ -265,8 +265,6 @@ export default class Frame extends React.Component {
       this.props.fontsToLoadArr.join('%7C') :
       fontsToLoadArr.join('%7C');
 
-    console.log({f2l,fontsToLoadArr})
-
     const hrefLangs = [];
     if(meta.relatedPages){
       hrefLangs.push(

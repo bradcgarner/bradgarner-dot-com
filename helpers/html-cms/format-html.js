@@ -1,162 +1,13 @@
 import React               from 'react';
-import LazyLoad            from 'react-lazyload';
 import { isObjectLiteral } from 'conjunction-junction';
 import ImageContainer      from '../../components/_general/image-container';
 import ImagePack           from '../../components/_general/image-pack';
 import { 
-  fontMain,
-  globalFontColor,
-  globalHeaderColor,
   defTextStyle, 
   defUlStyle,
   defEmStyle }             from '../common-styles';
 import { fireGtmHover }    from '../browser/tag-manager';
-
-const imageSplitterInner  = '****';
-const imageSplitterOuter  = `<p>${imageSplitterInner}</p>`;
-
-export const formatButterCMSBody = string => {
-  const s1 = typeof string === 'string' ? string : '' ;
-  if(!s1) return '' ;
-  if(
-    s1.includes('<script') ||
-    s1.includes('</script') ||
-    s1.includes('< script') ||
-    s1.includes('</ script')
-    ) { return '<p>Sorry... we just detected a problem.</p>'; }
-
-  if(process.env.CHECK_LINKS){
-    const badIndex = s1.indexOf('urban-meadow.herokuapp.com');
-    if(badIndex > -1){
-      console.error('FIX HYPERLINK', s1.slice(badIndex, badIndex + 200));
-    } else {
-      const badIndex1 = s1.indexOf('urban-meadow');
-      if(badIndex > -1){
-        console.error('FIX HYPERLINK', s1.slice(badIndex1, badIndex1 + 200));
-      } else {
-        const badIndex2 = s1.indexOf('https://urban-meadow.com');
-        if(badIndex2 > -1){
-          console.error('FIX HYPERLINK', s1.slice(badIndex2, badIndex2 + 200));
-        }
-      }
-    }
-  }
-
-  const color = globalFontColor;
-  const font  = fontMain;
-  const size  = 'font-size: 14px';
-  const fsize = 'font-size: 12px';
-  // const ht    = 'line-height: 170%';
-  const wt    = 'font-weight: normal';
-  const block = 'font-style: italic';
-  const cMargin = 'margin: 5px 0 5px 0;'
-  const pMargin = 'margin: 10px 0 10px 0;'
-  const hMargin = 'margin: 10px 0 10px 0;'
-
-  const lazy = s1.split(imageSplitterOuter).join(imageSplitterInner);
-
-  const link1 = lazy.split('http://urbanmeadow').join('https://www.urbanmeadow')
-  const link2 = link1.split('http://www.urbanmeadow').join('https://www.urbanmeadow')
-
-  const pi1 = link2.split('<p><iframe').join('<iframe');
-  const pi3 = pi1.split('</iframe></p>').join('</iframe>');
-
-  const i1 = pi3.split('<iframe').join(
-    `<div class="resp-container"
-    style="position: relative;
-    overflow: hidden;
-    padding-top: 56.25%; max-height: 56vw;
-    margin-bottom: 15px;">
-  <iframe
-    style="
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;"`);
-
-  const i3 = i1.split('</iframe>').join('</iframe></div>');
-
-  const h1a = i3.split('<h1>').join(`<h1  style="color: ${globalHeaderColor}; ${font}; ${hMargin}; font-size: 26px;">`);
-
-  const h1c = h1a.split('<h1 style="').join(`<h1  style="color: ${globalHeaderColor}; ${font}; ${hMargin}; font-size: 26px; `);
-
-  const h2a = h1c.split('<h2>').join(`<h2  style="color: ${globalHeaderColor}; ${font}; ${hMargin}; font-size: 24px;">`);
-
-  const h2c = h2a.split('<h2 style="').join(`<h2  style="color: ${globalHeaderColor}; ${font}; ${hMargin}; font-size: 24px; `);
-
-  const h3a = h2c.split('<h3>').join(`<h3  style="color: ${globalHeaderColor}; ${font}; ${hMargin}; font-size: 22px;">`);
-
-  const h3d = h3a.split('<h3 style="').join(`<h3  style="color: ${globalHeaderColor}; ${font}; ${hMargin}; font-size: 22px; `);
-
-  const h4a = h3d.split('<h4>').join(`<h4  style="color: ${globalHeaderColor}; ${font}; ${hMargin}; font-size: 20px;">`);
-
-  const h4c = h4a.split('<h4 style="').join(`<h4  style="color: ${globalHeaderColor}; ${font}; ${hMargin}; font-size: 20px; `);
-
-  const h5a = h4c.split('<h5>').join(`<h5  style="color: ${globalHeaderColor}; ${font}; ${hMargin}; font-size: 18px;">`);
-
-  const h5c = h5a.split('<h5 style="').join(`<h5  style="color: ${globalHeaderColor}; ${font}; ${hMargin}; font-size: 18px; `);
-
-  const h6a = h5c.split('<h6>').join(`<h6  style="color: ${globalHeaderColor}; ${font}; ${hMargin}; font-size: 16px;">`);
-
-  const h6c = h6a.split('<h6 style="').join(`<h6  style="color: ${globalHeaderColor}; ${font}; ${hMargin}; font-size: 16px; `);
-
-  const p1 = h6c.split('<p style="').join(`<p  style="color: ${color}; ${font}; ${pMargin}; ${size}; ${wt}; `);
-
-  const p3 = p1.split('<p>').join(`<p  style="color: ${color}; ${font}; ${pMargin}; ${size}; ${wt};">`);
-
-  const t1 = p3.split('<td style="').join(`<td style="color: ${color}; ${font}; ${size}; ${wt}; text-align: center;  `);
-
-  const l1 = t1.split('<li>').join(`<li style="color: ${color}; ${font}; ${size}; ${wt}; list-style-type: initial; margin-left: 1em; margin-bottom: 5px;">`);
-  
-  const f1 = l1.split('<figure class="image">').join(`<figure class="image" style="margin-left: 0; margin-right: 0; flex-direction: column;">`);
-
-  const f3 = f1.split('<figure class="image" style="').join(`<figure class="image" style="margin-left: 0; margin-right: 0; flex-direction: column; `);
-
-  const b1 = f3.split('<blockquote>').join(`<blockquote style="${block};">`);
-
-  const m1 = b1.split('<img style=').join('<img style="max-width: 100%; object-fit: contain; ');
-  
-  const m3 = m1.split('<img src=').join('<img style="max-width: 100%; object-fit: contain;" src=');  
-
-  const s3 = m3.split('</strong>').join('</strong>'); // We were adding a space inside, but that creates other problems.
-  
-  const s4 = s3.split('  ').join(' ');
-  return s4;
-
-};
-
-export const createPostParts = (post, contentClickHandler) => {
-  
-  const b = post && typeof post.body === 'string' ? post.body : ''
-
-  const arr = [];
-
-  const text = formatButterCMSBody(b);
-    const splitOnImages = text.split(imageSplitterInner);
-    splitOnImages.forEach((t,j)=>{
-      if(j%2 === 0){
-        arr.push(
-          <div key={j}
-            className='post-content-inner' 
-            onClick={contentClickHandler}
-            dangerouslySetInnerHTML={{__html: t}}/> 
-        );
-      } else {
-        arr.push(<LazyLoad height={200}
-          key={j}>
-          <div
-            className='post-content-image' 
-            onClick={contentClickHandler}
-            dangerouslySetInnerHTML={{__html: t}}/> 
-          </LazyLoad>
-        );
-      }
-    })
-
-  return arr;
-};
+import VideoContainer from '../../components/_general/video-container';
 
 const _formatRawHtmlInner = (string, pStyle, mStyle) => {
 
@@ -642,6 +493,13 @@ export const createElements = (arr, _textStyle, _emStyle, _tableStyle, _tdStyle,
           caption       ={c.caption}
           containerStyle={c.containerStyle}
           imageStyle    ={c.imageStyle} /> :
+
+      c.element === 'video' ?
+        <VideoContainer
+          key           ={i}
+          url           ={c.url}
+          title         ={c.title}
+          caption       ={c.caption} /> :
 
       c.element === 'image-pack' ?
         <ImagePack

@@ -1,15 +1,19 @@
 import React              from 'react';
 import LazyLoad           from 'react-lazyload';
 import {
-  calcMinimumWindowDimensions
+  calcMinimumWindowDimensions, smoothScroll
 }                         from 'browser-helpers';
 import content            from '../../helpers/content';
 import { 
-  bgBlue0, 
+  bgBlue0,
   bgBlue5, 
-  boxShadow, 
-  boxShadowProperty }     from '../../helpers/common-styles';
+  boxShadow }             from '../../helpers/common-styles';
 import FakeNavBar         from '../_general/fake-nav-bar';
+import { createElements } from '../../helpers/html-cms/format-html';
+import SocialFollow       from '../social/follow';
+import { socialHandles }  from '../../helpers/content/social-handles';
+
+const landingIdPrefix = 'landing-element-';
 
 export default class Landing extends React.Component {
   constructor(props){
@@ -26,11 +30,14 @@ export default class Landing extends React.Component {
           [i]: true,
         }
       });
+      smoothScroll.scrollTo(`${landingIdPrefix}${i}`);
+      setTimeout(()=>{
+        smoothScroll.scrollTo(`${landingIdPrefix}${i}`);
+      }, 1000);
     } else {
       const activeIndices = {...this.state.activeIndices};
       activeIndices[`${i}`] = !activeIndices[`${i}`];
       this.setState({activeIndices});
-
     }
   }
 
@@ -53,30 +60,24 @@ export default class Landing extends React.Component {
 
     const home = _c.home || {};
 
-    const cards = Array.isArray(home.cards) ?
-      home.cards : [];
+    const elements = Array.isArray(home.elements) ?
+      home.elements : [];
 
-    const cardContainerCss = {
+    const elementContainerCss = {
       flexDirection: 'column',
       alignItems: 'center',
       width: '100%',
       overflow: 'hidden',
     };
 
-    const imageWidth  = 284;
+    const imageWidth  = 350;
     const imageHeight   = imageWidth/1.91;
 
-    const cardTextContainerCss = {
+    const elementTextContainerCss = {
       position: 'relative',
       flex: 1,
       marginLeft: 25,
     };
-
-    const inlineHeaderCss = {
-      fontSize: 20,
-      color: bgBlue5,
-      fontWeight: 'bold',
-    }; 
 
     const h2Css = {
       fontSize: 18,
@@ -106,10 +107,10 @@ export default class Landing extends React.Component {
         </h2> : null 
       }
 
-      <div style={cardContainerCss} 
-        className="main-cards-container">
+      <div style={elementContainerCss} 
+        className="main-elements-container">
         { 
-          cards.map((c,i) => {
+          elements.map((c,i) => {
 
             const isActive = this.state.activeIndices[`${i}`];
 
@@ -122,8 +123,8 @@ export default class Landing extends React.Component {
               'image-container-inactive';
 
             const titleClass = isActive ?
-              'card-title-active' :
-              'card-title-inactive';
+              'element-title-active' :
+              'element-title-inactive';
 
             const shortClass = isActive ?
               'short-text-active' :
@@ -133,8 +134,13 @@ export default class Landing extends React.Component {
               'long-text-active' :
               'long-text-inactive';
 
+            const socialContainerClass = isActive ?
+              'social-container-active' :
+              'social-container-inactive';
+
 
             return <div key={i} 
+              id={`${landingIdPrefix}${i}`}
               onClick={()=>this.selectActiveIndex(i, cssWidthOuter)}
               className={`container-div ${activeContainerClass}`}>
               <div className={`image-container ${imageContainerClass}`} >
@@ -152,21 +158,28 @@ export default class Landing extends React.Component {
                       alt={c.alt} />
                   }
                 </LazyLoad>
-                <h2 className={`card-title ${titleClass}`}>
+                <h2 className={`element-title ${titleClass}`}>
                   {c.title}
                 </h2>
+                {
+                  c.handle ? <div 
+                   className={`social-container ${socialContainerClass}`}>
+                  <SocialFollow 
+                    socialHandles={socialHandles[c.handle]}/>
+                  </div> : null 
+                }
+                
               </div>
-              <div className='card-text-container'
-                style={cardTextContainerCss}>
+              <div className='element-text-container'
+                style={elementTextContainerCss}>
                 <h3 className={`short-text ${shortClass}`} >
                   {c.shortText}
                 </h3>
-                <p className={`long-text ${longClass}`} >
-                  <span style={inlineHeaderCss}>
-                    {c.inlineHeader}
-                  </span>{` `}
-                  {c.longText}
-                </p>
+                <div className={`long-text ${longClass}`} >
+                  {
+                    createElements(c.elements)
+                  }
+                </div>
               </div>
             </div>
           })
@@ -184,18 +197,21 @@ export default class Landing extends React.Component {
           cursor: pointer;
           flex-direction: column;
           transition: all 2s;
+          transition: padding 0s;
         }
         .container-div-active {
           margin-top: 40px;
+          padding-top: 120px;
           margin-bottom: 40px;
           height: auto;
           overflow: visible;
-          box-shadow: ${boxShadow}
-          background-color: bgBlue0;
+          ${boxShadow}
+          background-color: ${bgBlue0};
           border-top: 1px solid #ccc;
         }
         .container-div-inactive {
-          margin-top: 25px;
+          margin-top: 20px;
+          padding-top: 20px;
           margin-bottom: 25px;
           height: auto;
           overflow: hidden;
@@ -208,24 +224,24 @@ export default class Landing extends React.Component {
         }
         .image-container {
           flex-direction: column;
-          max-width: 500px;
+          width: ${imageWidth}px;
         }
         .image {
           width: ${imageWidth}px;
           object-fit: contain;
         }
-        .card-title {
+        .element-title {
           color: #231f20;
           margin-bottom: 15px;
-          width: 100%;
+          width: ${imageWidth}px;
           transition: all 1.2s;
         }
-        .card-title-active {
+        .element-title-active {
           font-size: 28px;
           font-weight: bold;
-          margin-left: 30%;
+          margin-left: 50px;
         }
-        .card-title-inactive {
+        .element-title-inactive {
           font-size: 20px;
           font-weight: initial;
           margin-left: 0;
@@ -248,6 +264,12 @@ export default class Landing extends React.Component {
           left: 0;
           margin: 0;
           letter-spacing: initial;
+        }
+        .long-text {
+          flex-direction: column;
+        }
+        .long-text-p {
+          margin-bottom: 8px;
         }
         .long-text-active {
           position: relative;
@@ -280,6 +302,17 @@ export default class Landing extends React.Component {
         }
         .container-div:hover {
           background-color: #dff4f1;
+        }
+
+        .social-container {
+          width: 100%;
+          transition: all 3s;
+        }
+        .social-container-active {
+          opacity: 1;
+        }
+        .social-container-inactive {
+          opacity: 0;
         }
       `}</style>
     </header>
