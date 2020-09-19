@@ -162,6 +162,19 @@ export const home = {
           caption: 'This video explains the Purple-Roof Concept. Enjoy!',
         },
 
+        [
+          'The Purple-Roof Concept was invented by ',
+          {
+            href: 'https://www.linkedin.com/in/oscar-warmerdam-a7531016/',
+            text: 'Oscar Warmerdam', 
+          },
+          'with a healthy dose of inspiration from ',
+          {
+            href: 'https://www.robinsondesignengineers.com/',
+            text: 'Joshua Robinson',
+          },
+          '. Oscar is a true visionary who thinks on a grand scale about the environment and the green infrastructure industry. Though Oscar founded Green Roof Diagnostics, he handed it over to me to run it as an independent, unbiased research institute. To paraphrase Sting "if you love something, set it free", and that\'s just what Oscar did by separating GRD from Purple, so that both can flourish in their own ways.  I\'m so lucky to work with both teams.',
+        ],
       ],
       handle: 'purple',
     },
