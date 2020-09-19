@@ -253,6 +253,7 @@ export default class Landing extends React.Component {
           position: relative;
           top: 0;
           left: 0;
+          margin-left: 40px;
           opacity: 1;
           font-size: 16;
           width: 100%;
