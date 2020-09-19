@@ -4,7 +4,7 @@ import content               from '../helpers/content';
 import SiteMapCard           from '../components/_general/sitemap-card';
 import { getMeta }           from '../helpers/meta';
 import Frame                 from '../components/_general/_frame';
-import { fontsToLoad } from '../helpers/common-styles';
+import { fontsToLoadArr } from '../helpers/common-styles';
 
 export default function SiteMapPage() {
 
@@ -27,7 +27,7 @@ export default function SiteMapPage() {
   return <Frame 
     hideHeader={false}
     meta={meta}
-    fontsToLoad={contentObj.sitemap && contentObj.sitemap.fontsToLoad ? contentObj.sitemap.fontsToLoad : fontsToLoad}  >
+    fontsToLoadArr={contentObj.sitemap && contentObj.sitemap.fontsToLoadArr ? contentObj.sitemap.fontsToLoadArr : fontsToLoadArr}  >
     <section className='section'>
       {metas}
       <style jsx>{`

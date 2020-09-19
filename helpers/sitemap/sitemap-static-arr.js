@@ -10,85 +10,15 @@ const siteMapStaticArr = [ // list these in the same order as the menu
     key: 'home',
     path: '',
     lastmod: `${yr}-01-01`,
-    changefreq: 'yearly',
+    changefreq: 'monthly',
     priority: '1.0'
   },
   {
-    key: 'about',
-    path: 'about',
+    key: 'resume',
+    path: 'resume',
     lastmod: `${yr}-${mo}-01`,
-    changefreq: 'monthly',
-    priority: '0.6',
-  },
-  {
-    key: 'whatIs',
-    path: 'what-is-an-urban-meadow',
-    lastmod: `${yr}-${mo}-01`,
-    changefreq: 'monthly',
-    priority: '0.6',
-  },
-  {
-    key: 'importance',
-    path: 'importance-of-urban-meadows',
-    lastmod: `${yr}-${mo}-01`,
-    changefreq: 'monthly',
-    priority: '0.6',
-  },
-  {
-    key: 'resources',
-    path: 'resources',
-    lastmod: `${yr}-${mo}-${da}`,
-    changefreq: 'always',
-    priority: '0.6'
-  },
-  {
-    key: 'blog',
-    path: 'blog',
-    lastmod: `${yr}-${mo}-${da}`,
-    changefreq: 'always',
-    priority: '0.6'
-  },
-  {
-    key: 'gallery',
-    path: 'gallery-of-urban-meadows',
-    lastmod: `${yr}-${mo}-01`,
-    changefreq: 'monthly',
-    priority: '0.6',
-  },
-  {
-    key: 'plant',
-    path: 'plant-an-urban-meadow',
-    lastmod: `${yr}-${mo}-01`,
-    changefreq: 'monthly',
-    priority: '0.6',
-  },
-  {
-    key: 'grow',
-    path: 'how-to-grow-an-urban-meadow',
-    lastmod: `${yr}-${mo}-01`,
-    changefreq: 'monthly',
-    priority: '0.6',
-  },  
-  {
-    key: 'faq',
-    path: 'faq',
-    lastmod: `${yr}-01-01`,
-    changefreq: 'monthly',
-    priority: '0.1'
-  },
-  {
-    key: 'contact',
-    path: 'contact',
-    lastmod: `${yr}-01-01`,
     changefreq: 'yearly',
-    priority: '0.7'
-  },
-  {
-    key: 'dedication',
-    path: 'dedication',
-    lastmod: `${yr}-01-01`,
-    changefreq: 'yearly',
-    priority: '0.1'
+    priority: '0.6',
   },
   {
     key: 'privacy',

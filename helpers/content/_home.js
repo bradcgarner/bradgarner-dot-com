@@ -27,7 +27,7 @@ export const home = {
     image:       'https://cdn.buttercms.com/WuTLCfCQT9mY30MZlvtB',
     alt:         'native grasses and flowering perennials growing as a plant community',
   },
-  fontsToLoad: fontsToLoadArr.slice(0,2),
+  fontsToLoadArr: fontsToLoadArr.slice(0,2),
 
   cards: [
     {

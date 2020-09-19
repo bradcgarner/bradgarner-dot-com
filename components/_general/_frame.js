@@ -7,12 +7,12 @@ import {
   parseQueryString }     from 'browser-helpers';  // DO NOT DELETE! This mutates the window object; not invoked in this file
 import { 
   fontMain,
-  fontsToLoad,
+  fontsToLoadArr,
   globalFontColor, 
   hotButton,
   hotButtonHover, 
   bgBlue4,
-  mediumGray}       from '../../helpers/common-styles';
+  mediumGray}            from '../../helpers/common-styles';
 import { detectBrowser } from '../../helpers/browser/read-window';
 import { queryStrings }  from '../../helpers/browser/query-strings';
 import sitemapDynamicObj from '../../helpers/sitemap/sitemap-dynamic-object.json';
@@ -260,12 +260,12 @@ export default class Frame extends React.Component {
       crossOrigin="anonymous" 
       src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=es5%2Ces6%2Ces7&unknown=polyfill"></script>
 
-    const fontsToLoadArr = Array.isArray(this.props.fontsToLoad) ?
-      this.props.fontsToLoad : 
-      Array.isArray(fontsToLoad) ?
-      fontsToLoad :
-      [] ;
-    const f2l = fontsToLoadArr.join('%7C'); // encoded pipe | character
+    const f2l = 
+      Array.isArray(this.props.fontsToLoadArr) ?
+      this.props.fontsToLoadArr.join('%7C') :
+      fontsToLoadArr.join('%7C');
+
+    console.log({f2l,fontsToLoadArr})
 
     const hrefLangs = [];
     if(meta.relatedPages){
@@ -327,14 +327,14 @@ export default class Frame extends React.Component {
           </script> : null
         }
         
-        <link rel="icon" type="image/x-icon" href={`${faviconPath}favicon.ico`} />
-        <link rel="apple-touch-icon" sizes="180x180" href={`${faviconPath}apple-touch-icon.png`}/>
-        <link rel="icon" type="image/png" sizes="32x32" href={`${faviconPath}favicon-32x32.png`}/>
-        <link rel="icon" type="image/png" sizes="16x16" href={`${faviconPath}favicon-16x16.png`}/>
-        <link rel="manifest" href={`${faviconPath}site.webmanifest`}/>
-        <link rel="mask-icon" href={`${faviconPath}safari-pinned-tab.svg`} color="#73308a"/>
-        <meta name="msapplication-TileColor" content="#9f00a7"/>
-        <meta name="theme-color" content="#ffffff" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+        <link rel="manifest" href="/site.webmanifest"/>
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
+        <meta name="msapplication-TileColor" content="#2b5797"/>
+        <meta name="theme-color" content="#ffffff"/>
+
       </Head>
       {gtmNoScript}
       {header}

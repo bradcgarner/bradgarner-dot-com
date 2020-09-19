@@ -16,7 +16,7 @@ export const privacy = {
     hrefLang:    'en',
   },
   
-  fontsToLoad: fontsToLoadArr.slice(0,2),
+  fontsToLoadArr: fontsToLoadArr.slice(0,2),
   consent: {
     bannerMain: 'This site uses cookies to improve your experience.',
     buttonLabel: 'Got It!',

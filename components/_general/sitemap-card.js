@@ -1,6 +1,6 @@
 import Link                from 'next/link';
 import LazyLoad            from 'react-lazyload';
-import { uMGreen }          from '../../helpers/common-styles.js';
+import { bgBlue4 }          from '../../helpers/common-styles.js';
 import { formatImageUrl }  from '../../helpers/html-cms/format-image-url';
 
 export default function SiteMapCard(props) {
@@ -44,7 +44,7 @@ export default function SiteMapCard(props) {
           overflow: hidden;
           left: 5px;
           top: 5px;
-          background-color: ${uMGreen};
+          background-color: ${bgBlue4};
           z-index: -1;
         }
       `}</style>

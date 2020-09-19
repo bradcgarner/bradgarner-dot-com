@@ -5,7 +5,7 @@ import { fireNewPageView } from '../helpers/browser/tag-manager';
 import Frame               from '../components/_general/_frame';
 import Modal               from '../components/_general/modal';
 import PrivacyMain      from '../components/privacy/_main';
-import { fontsToLoad }     from '../helpers/common-styles';
+import { fontsToLoadArr }     from '../helpers/common-styles';
 
 export default class PrivacyPage extends React.Component {
   constructor(props){
@@ -41,7 +41,7 @@ export default class PrivacyPage extends React.Component {
     return <Frame 
       hideHeader={false} 
       meta={meta} 
-      fontsToLoad={c.fontsToLoad ? c.fontsToLoad : fontsToLoad} >
+      fontsToLoadArr={c.fontsToLoadArr ? c.fontsToLoadArr : fontsToLoadArr} >
       <section className='section'>
         <PrivacyMain toggleModal={this.toggleModal}/>
         <style jsx>{`

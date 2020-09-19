@@ -66,13 +66,6 @@ export default class Landing extends React.Component {
     const imageWidth  = 284;
     const imageHeight   = imageWidth/1.91;
 
-    const cardTitleCss = {
-      color: '#231f20',
-      fontSize: 20,
-      marginBottom: 3,
-      height: 60,
-    };
-
     const cardTextContainerCss = {
       position: 'relative',
       flex: 1,
@@ -128,6 +121,10 @@ export default class Landing extends React.Component {
               'image-container-active' :
               'image-container-inactive';
 
+            const titleClass = isActive ?
+              'card-title-active' :
+              'card-title-inactive';
+
             const shortClass = isActive ?
               'short-text-active' :
               'short-text-inactive';
@@ -155,7 +152,7 @@ export default class Landing extends React.Component {
                       alt={c.alt} />
                   }
                 </LazyLoad>
-                <h2 className='card-title' style={cardTitleCss}>
+                <h2 className={`card-title ${titleClass}`}>
                   {c.title}
                 </h2>
               </div>
@@ -216,6 +213,22 @@ export default class Landing extends React.Component {
         .image {
           width: ${imageWidth}px;
           object-fit: contain;
+        }
+        .card-title {
+          color: #231f20;
+          margin-bottom: 15px;
+          width: 100%;
+          transition: all 1.2s;
+        }
+        .card-title-active {
+          font-size: 28px;
+          font-weight: bold;
+          margin-left: 30%;
+        }
+        .card-title-inactive {
+          font-size: 20px;
+          font-weight: initial;
+          margin-left: 0;
         }
         .short-text-active {
           position: absolute;

@@ -2,7 +2,6 @@ import Link                from 'next/link';
 import { 
   calcMinimumWindowDimensions, 
   scrollToTop }            from 'browser-helpers';
-import { navLink }         from '../../helpers/browser/tag-manager';
 import { 
   bgBlue3,
   bgBlue6 }                from '../../helpers/common-styles';
@@ -62,7 +61,9 @@ export default function Header(){
     <div className='nav-bar' style={navBarCss}>
       <div className='icon' style={homeAndIconCss}>
         <Link prefetch={false} href={'/'}>
-          <Home style={{height:40,width:40}} />
+          <a style={{height:40,width:40}}>
+            <Home style={{height:40,width:40}} />
+          </a>
         </Link>
       </div>
       <h1 className='h1' style={h1Css}>
