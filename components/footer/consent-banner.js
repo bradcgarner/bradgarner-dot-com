@@ -5,7 +5,7 @@ import {
   consentButton,
   consentButtonHover,
   accentFontColorHover,
-  uMGreenDarker}    from '../../helpers/common-styles';
+  bgBlue7}    from '../../helpers/common-styles';
 import { privacyAll, 
   privacyOpen }            from '../../helpers/browser/tag-manager';
 import Cookie              from '../graphics/cookie';
@@ -39,7 +39,7 @@ export default function ConsentBanner(props) {
     cursor: 'pointer',
     borderRadius: '2px',
     paddingTop: '3px',
-    backgroundColor: uMGreenDarker,
+    backgroundColor: bgBlueDarker,
     border: '1px solid #ddd',
     color: '#fff',
     paddingLeft: '15px',

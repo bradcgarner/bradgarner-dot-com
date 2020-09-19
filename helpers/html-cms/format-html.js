@@ -1,17 +1,16 @@
 import React               from 'react';
 import LazyLoad            from 'react-lazyload';
 import { isObjectLiteral } from 'conjunction-junction';
+import ImageContainer      from '../../components/_general/image-container';
+import ImagePack           from '../../components/_general/image-pack';
 import { 
-  fontBlog,
+  fontMain,
   globalFontColor,
   globalHeaderColor,
   defTextStyle, 
   defUlStyle,
   defEmStyle }             from '../common-styles';
 import { fireGtmHover }    from '../browser/tag-manager';
-import ImageContainer from '../../components/_general/image-container';
-import ImagePack from '../../components/image-pack';
-import AuthorTag from '../../components/_general/author-tag';
 
 const imageSplitterInner  = '****';
 const imageSplitterOuter  = `<p>${imageSplitterInner}</p>`;
@@ -44,7 +43,7 @@ export const formatButterCMSBody = string => {
   }
 
   const color = globalFontColor;
-  const font  = fontBlog;
+  const font  = fontMain;
   const size  = 'font-size: 14px';
   const fsize = 'font-size: 12px';
   // const ht    = 'line-height: 170%';
@@ -634,11 +633,6 @@ export const createElements = (arr, _textStyle, _emStyle, _tableStyle, _tdStyle,
           }
         `}</style>
       </ol> :
-
-      c.element === 'author' ?
-        <AuthorTag
-          key={i}
-          text={c.text} /> :
 
       c.element === 'image' ?
         <ImageContainer

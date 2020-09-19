@@ -1,20 +1,20 @@
-export const uMGreen =                 '#276b0b'; //leaves accent 1 did not want to change variables due to potential problem causing throughout the files
-export const uMGreenRGB =              '94, 175, 91';
-export const uMGreenDarker =           '#416723'; //leaves back
-export const umGreenVeryDark = '#2D4818';
-export const umGreenYellow = '#8cd622';
-export const uMGreenDarkerRGB =        '65, 103, 35';
-export const uMGreenLighter =          '#83a94d';
-export const uMGreenLighterRGB =       '131, 169, 77';
-export const uMGreenSlightlyLighter =  '#588135'; //leaves middle
+export const bgBlue0                = '#eff5f9';
+export const bgBlue1                = '#CAE0ED';
+export const bgBlue1RGB             = '202,224,237';
+export const bgBlue2                = '#ABC8D9';
+export const bgBlue3                = '#8CB0C6';
+export const bgBlue4                = '#6E98B2';
+export const bgBlue4RGB             = '110,152,178';
+export const bgBlue5                = '#4F809F';
+export const bgBlue6                = '#30688B';
+export const bgBlue6RGB             = '48,104,139';
 
 export const black =                  '#2a171c';
 export const darkBrown =              '#3c2727'
 export const white =                  '#fff';
-export const knaufBlue =              '#009fe3';
 export const mediumGray =             '#8a7d7d';
 
-export const accentFontColor =        uMGreen;
+export const accentFontColor =        bgBlue4;
 export const accentFontColorHover =   mediumGray;
 
 export const headerFontColor =        accentFontColor;
@@ -23,11 +23,8 @@ export const headerFontColorHover =   '#a28ba2';
 
 export const footerBackgroundColor =  '#fafafa';
 export const globalFontColor =        darkBrown;
-export const globalHeaderColor =      uMGreen;
-export const postTitleReadColor =     mediumGray;
+export const globalHeaderColor =      bgBlue4;
 export const consentFontColor =       white;
-export const dropDownMenuFontColor =  white;
-export const dropDownMenuFontColorHover=accentFontColorHover;
 export const modalHeaderColor =       accentFontColor;
 export const cardHoverColor =         '#f3f5ed';
 export const cardShadowColor =        '#2a17ac';
@@ -37,34 +34,30 @@ export const disabledButtonColor    = '#c7c8ca';
 
 
 export const boxShadow = `box-shadow: rgba(${cardShadowColorRGB}, 0.3) 3px 3px 5px 0px;`;
+export const boxShadowProperty = `rgba(${cardShadowColorRGB}, 0.3) 3px 3px 5px 0px`;
 export const insetShadow = `box-shadow: inset 0 0 3px rgba(${cardShadowColorRGB}, 0.3);`
 // this is in the Myers reset in _frame.js
-export const fontNormal = `
-  font-family: Source Sans Pro, sans-serif;
-`;
+
 export const fontFinePrint = `
   font-family: Open Sans Condensed, sans-serif;
 `;
 export const fontFinePrintText = 'Open Sans Condensed, sans-serif';
 
-export const fontBlogMenu = `
-  font-family: Open Sans, sans-serif;
-`;
-
 // this is in format-html.js
-export const fontBlog = `
-  font-family: Nanum Gothic, sans-serif
+export const fontMain = `
+  font-family: Quicksand, sans-serif
 `;
 export const fontReading = `
-  ${fontBlog};
+  ${fontMain};
 `;
+
 export const fontReadingObject = {
-  fontFamily: 'Nanum Gothic, sans-serif',
+  fontFamily: 'Quicksand, sans-serif',
 };
-export const fontAuthor = fontReading;
 /* IMPORTANT! THIS GOES IN _FRAME.JS TO LOAD GOOGLE FONTS */
 export const fontsToLoadArr = [
-  'Nanum+Gothic', // blog
+  'Poppins:300', 
+  'Quicksand',
   'Source+Sans+Pro', // normal
   'Open+Sans:700', // blog menu
   'Open+Sans+Condensed:300', // fine print
@@ -99,11 +92,11 @@ export const sectionHeaderCSS = `
   max-width: 500px;
   margin-bottom: 30px;
   font-size: 40px;
-  color: ${uMGreenLighter};
+  color: ${bgBlue1};
 `;
 
 export const centeredAccentTextCSS = `
-  color: ${uMGreenLighter};
+  color: ${bgBlue1};
   font-size: 20px; 
   text-align: center; 
   font-weight: bold;
@@ -136,7 +129,7 @@ export const modalCard = `
 `;
 
 const _bigButton = `
-  ${fontNormal}
+  ${fontMain}
   font-size: 14px;
   align-self: center;
   text-align: center;
@@ -161,18 +154,18 @@ export const bigButtonHover =`
 
 export const hotButton = `
   ${_bigButton}
-  background-color: ${uMGreen};
+  background-color: ${bgBlue4};
   color: #fff;
 `;
 
 export const hotButtonHover = `
   border: 1px solid #ddd;
-  background-color: rgba(${uMGreenLighterRGB},0.8);
+  background-color: rgba(${bgBlue1RGB},0.8);
 `;
 
 export const consentButton = `
   ${_bigButton}
-  background-color: ${uMGreenDarker};
+  background-color: ${bgBlue6};
   border: 1px solid #ddd;
   color: #fff;
   padding-left: 15px;
@@ -181,7 +174,7 @@ export const consentButton = `
 `;
 
 export const consentButtonHover = `
-  background-color: ${uMGreenLighter};
+  background-color: ${bgBlue1};
 `;
 
 // @@@@@@@@@@ TEXT STYLES @@@@@@@@@@
@@ -202,7 +195,7 @@ export const defTextStyleObj = {
   color:        globalFontColor,
   marginTop:    10,
   marginBottom: 10,
-  fontFamily:  'Nanum Gothic, sans-serif',
+  fontFamily:  'Quicksand, sans-serif',
 };
 
 export const defUlStyle = `
@@ -261,77 +254,6 @@ export const pageMainInnerObj = {
   maxWidth: 800,
 };
 
-// @@@@@@@@@@ POSTS @@@@@@@@@@
-
-export const postTitle = `
-  font-size: 30px;
-  text-align: center;
-  color: ${globalHeaderColor};
-`;
-export const postTitleObj = {
-  fontSize: 30,
-  textAlign: 'center',
-  color: globalHeaderColor,
-};
-
-export const postMain = `
-  flex-direction: column;
-  align-items: center;
-  width: 75%;
-  padding: 40px 20px;
-  margin-top: 75px;
-`;
-
-export const postMainInner = pageMainInner;
-export const postMainInnerObj = pageMainInnerObj;
-
-// @@@@@@@@@@@ BLOG @@@@@@@@
-
-export const sideBarBottomBarBreakpoint = 750;
-
-export const sidebarTitleCSS = `
-  overflow: hidden;
-  font-size: 14px;
-  color: ${accentFontColor};
-  padding: 20px 0 10px 0;
-  margin: 0;
-`;
-
- export const sidebarUlCSS = `
-  flex-direction: column;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  background-color: white;
-  -moz-box-shadow:    inset 2px 2px 5px -1px ${mediumGray};
-  -webkit-box-shadow: inset 2px 2px 5px -1px ${mediumGray};
-  box-shadow:         inset 2px 2px 5px -1px ${mediumGray};
-  padding: 5px 5px 10px 10px;
-`;
-
-export const sidebarLiCSS = `
-  padding: 0;
-  margin-bottom: 7px;
-  margin-top: .2vw;
-`;
-
-export const sidebarLiButtonCSS = `
-  ${fontBlogMenu}
-  font-size: 12px;
-  text-align: left;
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  text-decoration: none;
-`;
-
-export const sidebarLiButtonHoverCSS = `
-  color: ${accentFontColor};
-`;
-
-// @@@@@@@@@@@ OTHER @@@@@@@@@@
-
 export const transparent = `
   opacity: 0.1;
   cursor: initial;
@@ -345,7 +267,7 @@ export const formInputField = `
   width: 250px;
   padding: 5px;
   min-height: 28px;
-  border: 1px solid ${uMGreenLighter};
+  border: 1px solid ${bgBlue1};
   ${fontReading};
   box-sizing: border-box;
 `;

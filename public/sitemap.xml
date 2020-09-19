@@ -2,137 +2,95 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
-      <loc>https://www.urban-meadow.com</loc>
+      <loc>http://localhost:3600</loc>
       <lastmod>2020-01-01</lastmod>
       <changefreq>yearly</changefreq>
       <priority>1.0</priority>
     </url>
    
     <url>
-      <loc>https://www.urban-meadow.com/about</loc>
+      <loc>http://localhost:3600/about</loc>
       <lastmod>2020-09-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.6</priority>
     </url>
    
     <url>
-      <loc>https://www.urban-meadow.com/what-is-an-urban-meadow</loc>
+      <loc>http://localhost:3600/what-is-an-urban-meadow</loc>
       <lastmod>2020-09-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.6</priority>
     </url>
    
     <url>
-      <loc>https://www.urban-meadow.com/importance-of-urban-meadows</loc>
+      <loc>http://localhost:3600/importance-of-urban-meadows</loc>
       <lastmod>2020-09-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.6</priority>
     </url>
    
     <url>
-      <loc>https://www.urban-meadow.com/resources</loc>
+      <loc>http://localhost:3600/resources</loc>
       <lastmod>2020-09-19</lastmod>
       <changefreq>always</changefreq>
       <priority>0.6</priority>
     </url>
    
     <url>
-      <loc>https://www.urban-meadow.com/blog</loc>
+      <loc>http://localhost:3600/blog</loc>
       <lastmod>2020-09-19</lastmod>
       <changefreq>always</changefreq>
       <priority>0.6</priority>
     </url>
    
     <url>
-      <loc>https://www.urban-meadow.com/gallery-of-urban-meadows</loc>
+      <loc>http://localhost:3600/gallery-of-urban-meadows</loc>
       <lastmod>2020-09-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.6</priority>
     </url>
    
     <url>
-      <loc>https://www.urban-meadow.com/plant-an-urban-meadow</loc>
+      <loc>http://localhost:3600/plant-an-urban-meadow</loc>
       <lastmod>2020-09-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.6</priority>
     </url>
    
     <url>
-      <loc>https://www.urban-meadow.com/how-to-grow-an-urban-meadow</loc>
+      <loc>http://localhost:3600/how-to-grow-an-urban-meadow</loc>
       <lastmod>2020-09-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.6</priority>
     </url>
    
     <url>
-      <loc>https://www.urban-meadow.com/faq</loc>
+      <loc>http://localhost:3600/faq</loc>
       <lastmod>2020-01-01</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.1</priority>
     </url>
    
     <url>
-      <loc>https://www.urban-meadow.com/contact</loc>
+      <loc>http://localhost:3600/contact</loc>
       <lastmod>2020-01-01</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.7</priority>
     </url>
    
     <url>
-      <loc>https://www.urban-meadow.com/dedication</loc>
+      <loc>http://localhost:3600/dedication</loc>
       <lastmod>2020-01-01</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.1</priority>
     </url>
    
     <url>
-      <loc>https://www.urban-meadow.com/privacy</loc>
+      <loc>http://localhost:3600/privacy</loc>
       <lastmod>2020-01-01</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.1</priority>
     </url>
    
   
-    <url>
-      <loc>https://www.urban-meadow.com/post/why-meadows</loc>
-      <lastmod>2020-09-17T17:09:38.202870Z</lastmod>
-      <changefreq>yearly</changefreq>
-      <priority>1</priority>
-    </url>
-       
-    <url>
-      <loc>https://www.urban-meadow.com/post/seasonal-study-garner-residence</loc>
-      <lastmod>2020-09-09T18:24:28.713196Z</lastmod>
-      <changefreq>yearly</changefreq>
-      <priority>1</priority>
-    </url>
-       
-    <url>
-      <loc>https://www.urban-meadow.com/post/less-concrete-is-more-meadow</loc>
-      <lastmod>2020-09-17T17:10:13.334947Z</lastmod>
-      <changefreq>yearly</changefreq>
-      <priority>1</priority>
-    </url>
-       
-    <url>
-      <loc>https://www.urban-meadow.com/post/case-study-garner-green-roof</loc>
-      <lastmod>2020-09-09T18:24:28.713196Z</lastmod>
-      <changefreq>yearly</changefreq>
-      <priority>1</priority>
-    </url>
-       
-    <url>
-      <loc>https://www.urban-meadow.com/post/pruning-urban-meadows</loc>
-      <lastmod>2020-09-09T18:24:28.713196Z</lastmod>
-      <changefreq>yearly</changefreq>
-      <priority>1</priority>
-    </url>
-       
-    <url>
-      <loc>https://www.urban-meadow.com/post/case-study-garner-residence</loc>
-      <lastmod>2020-09-17T17:12:42.715291Z</lastmod>
-      <changefreq>yearly</changefreq>
-      <priority>1</priority>
-    </url>
-      
 </urlset>

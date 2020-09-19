@@ -5,7 +5,7 @@ const next        = require('next');
 const LRUCache    = require('lru-cache');
 const compression = require('compression');
 
-const PORT   = process.env.PORT || 3500;
+const PORT   = process.env.PORT || 3600;
 const dev    = process.env.NODE_ENV !== 'production';
 const app    = next({ dev });
 const handle = app.getRequestHandler();
@@ -63,66 +63,12 @@ app.prepare()
       const actualPage = '/';
       renderAndCache(req, res, actualPage);
     });
-
-    // ALL OTHER PAGES LISTED IN ALPHABETICAL ORDER
-    server.get('/about', (req, res) => {
-      const actualPage = '/about';
-      renderAndCache(req, res, actualPage);
-    });
-
-    server.get('/blog', (req, res) => {
-      const actualPage = '/blog';
-      renderAndCache(req, res, actualPage);
-    });
-    server.get('/urban-meadow-consultants', (req, res) => {
-      const actualPage = '/urban-meadow-consultants';
-      renderAndCache(req, res, actualPage);
-    });
-    server.get('/contact', (req, res) => {
-      const actualPage = '/contact';
-      renderAndCache(req, res, actualPage);
-    });
-    server.get('/edit-content', (req, res) => {
-      const actualPage = '/edit-content';
-      renderAndCache(req, res, actualPage);
-    });
-    server.get('/faq', (req, res) => {
-      const actualPage = '/faq';
-      renderAndCache(req, res, actualPage);
-    });
-
-    server.get('/gallery-of-urban-meadows', (req, res) => {
-      const actualPage = '/gallery-of-urban-meadows';
-      renderAndCache(req, res, actualPage);
-    });
-    server.get('/how-to-grow-an-urban-meadow', (req, res) => {
-      const actualPage = '/how-to-grow-an-urban-meadow';
-      renderAndCache(req, res, actualPage);
-    })
-    server.get('/importance-of-urban-meadows', (req, res) => {
-      const actualPage = '/importance-of-urban-meadows';
-      renderAndCache(req, res, actualPage);
-    });
-    server.get('/plant-an-urban-meadow', (req, res) => {
-      const actualPage = '/plant-an-urban-meadow';
-      renderAndCache(req, res, actualPage);
-    });
-    // this is what allows direct access to the page
-    server.get('/post/:slug', (req, res) => {
-      const actualPage = '/post';
-      const queryParams = { slug: req.params.slug }; 
-      renderAndCache(req, res, actualPage, queryParams);
-    });
     server.get('/privacy', (req, res) => {
       const actualPage = '/privacy';
       renderAndCache(req, res, actualPage);
     });
-    server.get('/urban-meadow-resources', (req, res) => {
-      const actualPage = '/urban-meadow-resources';
-      renderAndCache(req, res, actualPage);
-    });
-    server.get('/under-construction', (req, res) => {
-      const actualPage = '/under-construction';
+    server.get('/resume', (req, res) => {
+      const actualPage = '/resume';
       renderAndCache(req, res, actualPage);
     });
     server.get('/sitemap', (req, res) => {
@@ -131,10 +77,6 @@ app.prepare()
     });
     server.get('/sitemap.html', (req, res) => {
       const actualPage = '/sitemap';
-      renderAndCache(req, res, actualPage);
-    });
-    server.get('/what-is-an-urban-meadow', (req, res) => {
-      const actualPage = '/what-is-an-urban-meadow';
       renderAndCache(req, res, actualPage);
     });
     
@@ -223,7 +165,7 @@ app.prepare()
 
     server.listen(PORT, (err) => {
       if (err) throw err;
-      console.log(`Urban Meadow is running on port ${PORT}`);
+      console.log(`Brad Garner is running on port ${PORT}`);
     });
   })
   .catch((ex) => {

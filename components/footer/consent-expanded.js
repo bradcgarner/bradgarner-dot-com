@@ -1,7 +1,7 @@
 import Link             from 'next/link';
 import content          from '../../helpers/content';
 import { 
-  fontNormal,
+  fontMain,
   fontFinePrint,
   consentFontColor,
   consentButton,
@@ -113,7 +113,7 @@ export default class ConsentExpanded extends React.Component {
           border: none;
         }
         .link {
-          ${fontNormal}
+          ${fontMain}
           font-size: 11px;
           font-style: italic;
           font-weight: normal;

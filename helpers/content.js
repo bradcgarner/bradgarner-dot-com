@@ -1,31 +1,13 @@
 import {
-  xyz as _xyz, thisUrl}               from './content/_general';
+  xyz as _xyz, thisUrl}      from './content/_general';
 export const xyz = _xyz;
 import { home }              from './content/_home';
 
-import { about }             from './content/about';
-import { blog }              from './content/blog';
-import { consultants }       from './content/consultants';
-import { contact }           from './content/contact';
-import { dedication }        from './content/dedication';
-import { editContent }       from './content/edit-content';
 import { error }             from './content/error';
-import { faq }               from './content/faq';
 import { footer }            from './content/footer';
-import { gallery }           from './content/gallery';
-import { grow }              from './content/grow';
-import { importance }        from './content/importance'
-import { plant }             from './content/plant';
-import { post }              from './content/post';
 import { privacy }           from './content/privacy';
-import { resources }         from './content/resources';
-import { sitemap }           from './content/sitemap';
 import { socialHandles }     from './content/social-handles';
-import { whatIs }            from './content/what-is';
 
-import {   
-  allCategoriesObject,
-  allTagsObject }            from './content/cats-and-tags';
 import sitemapDynamicObj     from './sitemap/sitemap-dynamic-object';
 
 /*
@@ -48,30 +30,11 @@ const allTheContent = {
   },
 
   home,
-
-  about,
-  blog,
-  consultants,
-  contact,
-  dedication,
-  editContent,
   error,
-  faq,
   footer,
-  gallery,
-  grow,
-  importance,
-  plant,
-  post,
   privacy,
-  resources,
-  sitemap,
   socialHandles,
-  whatIs,
-
-  allCategoriesObject,
-  allTagsObject,
-  };
+};
 
 
 for(let page in allTheContent){

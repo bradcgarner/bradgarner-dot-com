@@ -5,7 +5,7 @@ import {
   fireNewPageView }     from '../helpers/browser/tag-manager';
 import { fontsToLoad }  from '../helpers/common-styles';
 import Frame            from '../components/_general/_frame';
-import HomeMain      from '../components/home/_main';
+import HomeMain         from '../components/home/_main';
 
 export default function HomePage(props) {
 

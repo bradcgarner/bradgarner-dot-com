@@ -6,12 +6,12 @@ import {
   calcMinimumWindowDimensions,
   parseQueryString }     from 'browser-helpers';  // DO NOT DELETE! This mutates the window object; not invoked in this file
 import { 
-  fontNormal,
+  fontMain,
   fontsToLoad,
   globalFontColor, 
   hotButton,
   hotButtonHover, 
-  uMGreen,
+  bgBlue4,
   mediumGray}       from '../../helpers/common-styles';
 import { detectBrowser } from '../../helpers/browser/read-window';
 import { queryStrings }  from '../../helpers/browser/query-strings';
@@ -292,7 +292,7 @@ export default class Frame extends React.Component {
       }
     }
 
-    const fonts = null ; // <link href={`https://fonts.googleapis.com/css?family=${f2l}`} rel="stylesheet" lazyload='true' />
+    const fonts = <link href={`https://fonts.googleapis.com/css?family=${f2l}`} rel="stylesheet" lazyload='true' />
     return <div className='frame' style={layoutStyle}>
       <Head>
         {hrefLangs}
@@ -360,7 +360,7 @@ export default class Frame extends React.Component {
           padding: 0;
           border: 0;
           font-size: 16px; /* was 100% */
-          ${fontNormal} /* customized default font */
+          ${fontMain}; /* customized default font */
           /*font: inherit;*/
           color: ${globalFontColor}; /* Brad added */
           vertical-align: baseline;
@@ -438,7 +438,7 @@ export default class Frame extends React.Component {
         }
 
         /* THESE ARE GLOBAL BECAUSE USED IN BLOG POSTS */
-        a.uMGreen-button {
+        a.bgBlue4-button {
           ${hotButton}
           padding: 10px;
           display: block;
@@ -447,7 +447,7 @@ export default class Frame extends React.Component {
           text-align: center;
           max-width: 250px;
         }
-        a.uMGreen-button:hover {
+        a.bgBlue4-button:hover {
           ${hotButtonHover}
           border: none;
         }
@@ -456,7 +456,7 @@ export default class Frame extends React.Component {
           text-decoration: underline;
         }
         a.um-link:hover {
-          color: ${uMGreen} !important;
+          color: ${bgBlue4} !important;
         }
         figcaption,
         figcaption p,

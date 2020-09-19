@@ -1,11 +1,11 @@
-import { uMGreen }         from '../../helpers/common-styles';
+import { bgBlue5 }         from '../../helpers/common-styles';
 import ConsentExpanded     from './consent-expanded';
 import ConsentBanner       from './consent-banner';
 
 export default function Consent(props) {
 
   const consentContainerCss = {
-    backgroundColor: uMGreen,
+    backgroundColor: bgBlue5,
     position: 'fixed',
     bottom: 0,
     left: 0,

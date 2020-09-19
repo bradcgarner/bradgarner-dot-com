@@ -6,7 +6,6 @@ import {
   scrollPageFooter}       from '../../helpers/browser/tag-manager';
 import { thisUrl }        from '../../helpers/content/_general';
 import SocialFollow       from '../social/follow';
-import MeadowSvgMaster    from '../meadow-svg/_meadow_svg_master';
 import FooterConsent      from './consent';
 
 export default function Footer(props) {
@@ -38,12 +37,6 @@ export default function Footer(props) {
   
 
   return <footer className='footer' id={scrollPageFooter}>
-    <LazyLoad offset={400}>
-      <MeadowSvgMaster 
-        navToPath           = {navToPath}
-        showPrivacySettings = {props.showPrivacySettings} />
-    </LazyLoad>
-   
     {consent}
     <div className='seo-divs'>
       <Link prefetch={false} href={`/sitemap.html`}>
