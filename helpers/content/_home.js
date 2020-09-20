@@ -8,18 +8,18 @@ export const home = {
   // post meta tags are per post, using Butter CMS
   meta: {
     // start tags that apply to all pages
-    siteName:    'Urban Meadow',
+    siteName:    'Brad Garner',
     twitterCard: 'summary_large_image',
     twitterSite: process.env.REACT_APP_TWITTER_ID, // get this from Twitter
     type:        'website',
-    seoTitle:    'Urban Meadow',
-    siteTitle:   'Urban Meadow', // this is the <title> meta tag
+    seoTitle:    'Brad Garner',
+    siteTitle:   'Brad Garner', // this is the <title> meta tag
     hrefLang:    'en',
     // end tags that apply to all pages
 
     // start tags that apply ONLY to the home page (blog posts read these tags from the CMS) (pages missing tags will use the home page tags as default)
-    h1Tag:       'Urban Meadow',
-    specialCardTitle: 'Urban Meadow Home',
+    h1Tag:       'Brad Garner',
+    specialCardTitle: 'Home',
     // limit description to 120-140 characters
       //            1        10        20        30        40        50        60        70        80        90        100       110        120        130        140
     description: 'Brad Garner is a researcher, environmentalist, and computer programmer committed to using his skills to better the environment.',
@@ -38,9 +38,23 @@ export const home = {
       elements: [
         '!! I suppose environmental technologist !! might be the most succinct description of my career. ',
         
-        'In reverse chronology: I manage a tech-heavy green infrastructure research firm, Green Roof Diagnostics, where we focus on improving the science of green roofs and other green infrastructure.',
-        
-        'Before that I was in green roof construction, working with the amazingly talented Ben Eiben, whom I helped by researching his ideas and developing those into green roof products that altered the trajectory of green roof stormwater management.',
+        [
+          'In reverse chronology: I manage a tech-heavy green infrastructure research firm, ',
+          {
+            text: 'Green Roof Diagnostics',
+            href: 'https://www.greenroofdiagnostics.com',
+           },
+           ' where we focus on improving the science of green roofs and other green infrastructure.',
+        ],
+
+        [
+          'Before that I was in green roof construction, working with the amazingly talented ',
+          {
+            text: 'Ben Eiben',
+            href: 'https://www.linkedin.com/in/ben-eiben-33aa349/',
+          },
+          ', whom I helped by researching his ideas and developing those into green roof products that altered the trajectory of green roof stormwater management.'
+        ],
 
         'Before that I practiced landscape architecture, including a decade restoring historic Olmsted parks, and multiple US Embassy projects that took me to around the world.',
 
@@ -58,7 +72,25 @@ export const home = {
       urlTitle: 'visit Green Roof Diagnostics',
       shortText: 'Green Roof Diagnostics',
       elements: [
-        '!! I am so fortunate to lead the amazingly talented and dedicated team of Green Roof Diagnostics, !! including Dr. Anna Zakrisson, Dr. Scott Jeffers, and my right-hand-man Derek Hidalgo. We are researchers, hydrologists, biologists, modelers, technicians, and technologists who are working to quantify and improve the benefits of green infrastructure.',
+        
+        [
+          '!! I am so fortunate to lead the amazingly talented and dedicated team of !!',
+          {
+            href: 'https://www.greenroofdiagnostics.com',
+            text: '!! Green Roof Diagnostics, !! ',
+          },
+          ' including ',
+          {
+            href: 'https://annasimaginarium.com/',
+            text: 'Dr. Anna Zakrisson',
+          },
+          ' and',
+          {
+            href: 'https://www.anthroeng.com/',
+            text: 'Dr. Scott Jeffers',
+          },
+          ', and my right-hand-man Derek Hidalgo. We are researchers, hydrologists, biologists, modelers, technicians, and technologists who are working to quantify and improve the benefits of green infrastructure.',
+        ],
 
         'This work is by far the most challenging, most rewarding, and most fun I have ever had. And I could not ask to work with better people. Click the icon at left to learn more about Green Roof Diagnostics.',
 
@@ -82,8 +114,8 @@ export const home = {
       src: 'https://cdn.buttercms.com/vhphlSnnSfC8Bsp7r3CK',
       alt: 'Wildflowers with blue sky background',
       title: 'Environment',
-      // url: 'https://www.urbanmeadow.org',
-      // urlTitle: 'visit Urban Meadow',
+      // url: '',
+      // urlTitle: '',
       shortText: 'A passion for the environment',
       elements: [
         '!! My first passion is for the environment. !! This passion has grown and changed from when I was a little boy in the rural south chopping brush, camping in the woods, transplanting shrubs, rooting cuttings, wading into storm drain culverts during storms, and generally just not spending much time indoors.',
@@ -121,7 +153,13 @@ export const home = {
             text: 'Urban Meadow Blog'
           },
           '.'
-        ]
+        ],
+        {
+          element: 'image',
+          src: 'https://cdn.buttercms.com/F9nhvOMBSpGBQrM9hrsF',
+          caption: 'A beautiful urban meadow in my neighborhood, in Washington, DC',
+          alt: 'urban meadow with lush, tall native grasses, perennials, and varietys of colors and textures',
+        },
       ],
       handle: 'urbanmeadow',
     },
@@ -129,15 +167,21 @@ export const home = {
       src: 'https://cdn.buttercms.com/r61SSHI4TDKegJEce4QM',
       alt: 'screenshot of programming in Javascript using Visual Studio Code',
       title: 'Technology',
-      // url: 'https://www.urbanmeadow.org',
-      // urlTitle: 'visit Urban Meadow',
+      // url:'',
+      // urlTitle: '',
       shortText: 'Leveraging technology',
       elements: [
         '!! Technology is amazing. !! The first time I ever stayed up - completely unaware of the time - working until 3 am was while working on a Pascal project in college. I ended up with a minor in computer science, but just as a hobby. Even back in the early 1990s I had a strong affinity toward programming because I felt like it was a logical extension of our own intelligence.',
 
         'As I entered the non-computer-science workforce, I sort of forced programming into my landscape architectural role. I built a mini-CRM to track projects, a cost estimation tool, tools to help with grading, and was the cheerleader for AutoCad standards and templates.  All that was logical to me so that creative people could be creative, and so that machines could do the repetitive and precise. I was the oddball.',
         
-        'Finally I am in a firm where technology is central. I have never wanted to be a specialist at technology. I want to be a specialist at leveraging technology for environmental benefit.'
+        'Finally I am in a firm where technology is central. I have never wanted to be a specialist at technology. I want to be a specialist at leveraging technology for environmental benefit.',
+        {
+          element: 'image',
+          src: 'https://cdn.buttercms.com/3AV5j9AZQ5u7MGegna9B',
+          alt: 'Brad Garner\'s home office',
+          caption: 'My home office.  Greg can\'t complain since half the top floor of our house is trains.'
+        }
       ],
       handle: 'brad',
     },
@@ -168,12 +212,12 @@ export const home = {
             href: 'https://www.linkedin.com/in/oscar-warmerdam-a7531016/',
             text: 'Oscar Warmerdam', 
           },
-          'with a healthy dose of inspiration from ',
+          ' with a healthy dose of inspiration from ',
           {
             href: 'https://www.robinsondesignengineers.com/',
             text: 'Joshua Robinson',
           },
-          '. Oscar is a true visionary who thinks on a grand scale about the environment and the green infrastructure industry. Though Oscar founded Green Roof Diagnostics, he handed it over to me to run it as an independent, unbiased research institute. To paraphrase Sting "if you love something, set it free", and that\'s just what Oscar did by separating GRD from Purple, so that both can flourish in their own ways.  I\'m so lucky to work with both teams.',
+          '. Oscar is a true visionary who thinks on a grand scale about the environment and the green infrastructure industry. Oscar also founded Green Roof Diagnostics, then handed it over to me to run it as an independent, unbiased research institute. To paraphrase Sting "if you love something, set it free", and that\'s just what Oscar did by envisioning GRD, and then letting it set its own course.  I\'m so lucky to have that trust, and to work with both teams.',
         ],
       ],
       handle: 'purple',
@@ -187,6 +231,16 @@ export const home = {
         '!! My work at Green Roof Diagnostics involves a lot of IoT !! (internet of things) environmental sensors. My very first task at GRD was wiring and programming the lab and outdoor platforms. The real fun was building StormWatch, GRD’s internal monitoring software.',
 
         'StormWatch collects the data, handles data quality control, pre-analyzes the data, manages all user custom input (such as which profiles are being tested at what storm intensity). More recently StormWatch is allowing us to remotely control the lab, and it is semi-automatically parameterizing data for use in modeling. All that from a bunch of sensors and wires. Nerds have all the fun!!',
+
+        {
+          element: 'image',
+          src: 'https://cdn.buttercms.com/q0budX7NTLKDyIww96c2',
+          alt: 'view of the interior of Green Roof Diagnostic\'s rain simulator',
+          caption: '',
+        },
+        'The photo above shows the interior of the rain simulator at Green Roof Diagnostic\'s Virginia laboratory. Although it might look simple, it is not. The laboratory produces synthetic rainfall from 12mm to 150mm per hour (1/2-inch to 6-inches / hour) at a range of slopes, and performs a full continuous water balance by weighing every drop of water.',
+        
+        'After 2 years of manual operation, in 2020 I was finally able to set up remote control for most of the lab, and I am currently designing smart algorithms to allow the lab to operate multiple tests semi-automatically.',
       ],
       handle: 'grd',
     },
@@ -236,7 +290,60 @@ export const home = {
 
         'Then I discovered that I couldn\'t find a library with all the unit conversions I need. I need some doozies, like gallons per minute per foot to liters per second per hectare.  At this point, conjunction-junction was created: a library of pure Javascript helper functions tailored to scientific work.',
 
-        'My libraries at the NPM link at left (sorry, have not had time to document them all... will accept open-source help!)',
+        [
+          'My libraries include ',
+          {
+            href: 'https://www.npmjs.com/package/quadratics',
+            text: 'Quadratics (quadratic equation functions)',
+          },
+          ', ',
+          {
+            href: 'https://www.npmjs.com/package/conjunction-junction',
+            text: 'Conjunction-Junction (a large library of date-time, conversion, SQL, and other functions)',
+          },
+          ', ',
+          {
+            href: 'https://www.npmjs.com/package/browser-helpers',
+            text: 'Browser Helpers',
+          },
+          ', ',
+          {
+            href: 'https://www.npmjs.com/package/profile-properties',
+            text: 'Profile Properties (simple green roof profile calcs)',
+          },
+          ', ',
+          {
+            href: 'https://www.npmjs.com/package/log123',
+            text: 'Log123 (because logger is no longer maintained)',
+          },
+          ', ',
+          {
+            href: 'https://www.npmjs.com/package/the-superior-snippet',
+            text: 'The Superior Snippet (structured data API converter)',
+          },
+          ', ',
+          {
+            href: 'https://www.npmjs.com/package/something-rather-iconic',
+            text: 'Something Rather Iconic (the best way I found to work with Font Awesome and Next.js)',
+          },
+          ', ',
+          {
+            href: 'https://www.npmjs.com/package/pretty-colors',
+            text: 'Pretty Colors',
+          },
+          ', ',
+          {
+            href: 'https://www.npmjs.com/package/react-chart-js-preprocessor',
+            text: 'React Chart.js Preprocessor',
+          },
+          ', and its helper library ',
+          {
+            href: 'https://www.npmjs.com/package/graphing-helpers',
+            text: 'Graphing Helpers',
+          },
+          ', ',
+          '(sorry, have not had time to document them all... will accept open-source help!)',
+        ],
       ],
       handle: 'brad',
     },
@@ -263,6 +370,7 @@ export const home = {
         //   caption: '',
         // }
       ],
+      handle: 'brad',
     },
     {
       src: 'https://cdn.buttercms.com/3pjfHu4R0SZfu70HzZ6h',
@@ -273,10 +381,23 @@ export const home = {
         [
           '!! The most exciting part of my work is modeling! !! Though I am not a hydrologist, I am the interface between hydrologists, research, and programming.  I\'m Lucky to have some great mentors, like Charlie Miller, and work with one of the world\'s best green roof modelers, ',
           {
-            href: '',
+            href: 'https://www.anthroeng.com/',
             text: 'Dr. Scott Jeffers',
           },
           '.',
+        ],
+        {
+          element: 'image',
+          src: 'https://cdn.buttercms.com/3pjfHu4R0SZfu70HzZ6h',
+          alt: 'graph of calibration of detention hydrologic model nine storms',
+        },
+        [
+          'The graph above shows calibrating a SWMM model to a series of nine (9) consecutive tests performed in the rain simulator.  The X axis is time, the Y axis is instantaneous volume. Blue is rainfall, and the 2 red lines are actual and modeled runoff.  Notice how close the red lines are together!  Actual modeling is performed by ',
+          {
+            href: 'https://www.anthroeng.com/',
+            text: 'Scott Jeffers',
+          },
+          ', and research is performed in GRD\'s lab, and I write the software the collect and analyze the data, and to run the model in a web app that is accessible to architects, landscape architects, and engineers.'
         ],
         {
           element: 'video',
@@ -285,6 +406,7 @@ export const home = {
           caption: 'Sorry, I do not have a video that shows hydrologic modeling, but I can show you this video that shows the end results: a green roof that can replace a stormwater tank.',
         }
       ],
+      handle: 'grd',
     },
     {
       src: 'https://cdn.buttercms.com/k4bHfgJ8S0e1Ipqu6W0i',
@@ -298,9 +420,16 @@ export const home = {
 
         'To solve this I created react-chart-js-preprocessor.  This preprocessor requires the data as array of objects, and each property of each object converted into axes according to unit, selectors, etc. To maintain this, I keep a database of all properties, and assign them units, definitions, and labels (which is necessary anyway for scientific documentation and collaboration).',
 
+        {
+          element: 'image',
+          src: 'https://cdn.buttercms.com/SSxlZ094TJSH38RvUTkv',
+          alt: 'screenshot of controller for react-chart-js-preprocesor',
+          caption: 'Screenshot to illustrate some of the power of react-chart-js-preprocessor. In the React dev tools at right, a portion of one object is shown; notice keys with numeric properties. The preprocessor reads these keys to generate the controls shown at left, grouped by unit of measurement, and allowing toggling any property on the graph.'
+        },
+
         'React-chart-js-preprocessor + conjunction-junction have filled the gaps I needed to fill to work with scientific data in Javascript.',
       ],
-      handle: 'purple',
+      handle: 'brad',
     },
     {
       src: 'https://cdn.buttercms.com/ovAt4BDzRpum9Ye4eqRu',
@@ -317,6 +446,12 @@ export const home = {
           url: 'https://www.youtube.com/embed/ero86FbbK3g',
           title: 'Garlic Scape Pasta',
           caption: 'One of our favorite veggies is garlic scapes, the crack of vegetables.  Here\'s the #1 way to cook garlic scapes.',
+        },
+        {
+          element: 'video',
+          url: 'https://www.youtube.com/embed/m-ms4qN9bt4',
+          title: 'Frozen Steak',
+          caption: 'We don\'t each much meat, but when we do, it looks like I\'ll burn the kitchen down! Enjoy!',
         }
       ],
       handle: 'brad',

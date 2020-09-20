@@ -1,8 +1,17 @@
 import React              from 'react';
 import LazyLoad           from 'react-lazyload';
 import {
-  calcMinimumWindowDimensions, smoothScroll
-}                         from 'browser-helpers';
+  calcMinimumWindowDimensions, 
+  smoothScroll }          from 'browser-helpers';
+import {
+  ConnectDevelop,
+  Anchor,
+  Bahai,
+  BikingMountain,
+  Boombox,
+  Bullhorn,
+  ChartNetwork,
+  CoffeePot }             from 'something-rather-iconic';
 import content            from '../../helpers/content';
 import { 
   bgBlue0,
@@ -15,25 +24,79 @@ import { socialHandles }  from '../../helpers/content/social-handles';
 
 const landingIdPrefix = 'landing-element-';
 
+const spinnerOptions = [
+  ConnectDevelop,
+  Anchor,
+  Bahai,
+  BikingMountain,
+  Boombox,
+  Bullhorn,
+  ChartNetwork,
+  CoffeePot,
+];
+
+const spinnerAnimations = [
+  'spin1',
+  'drop',
+  'spin2',
+  'left',
+  'shake',
+  'shake',
+  'spin3',
+  'pulse',
+];
+
+const colors = [
+  'red',
+  'purple',
+  'blue',
+  'orange',
+  'brown',
+  'gray',
+  'cyan',
+];
+
 export default class Landing extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       activeIndices: {},
+      spinner: false,
+      spinnerCount: 0,
+      spinnerIndex: 0,
     };
   }
 
   selectActiveIndex(i, cssWidthOuter){
     if(cssWidthOuter > 500){
-      this.setState({
-        activeIndices: {
-          [i]: true,
-        }
-      });
-      smoothScroll.scrollTo(`${landingIdPrefix}${i}`);
-      setTimeout(()=>{
+      return new Promise(resolve => {
+        const spinnerCount = this.state.spinnerCount + 1 || 0;
+        resolve(
+          this.setState({
+            spinner: true,
+            spinnerCount,
+            spinnerIndex: spinnerCount % spinnerOptions.length,
+            activeIndices: {[i]: true},
+          })
+        );
+      })
+      .then(()=>{
         smoothScroll.scrollTo(`${landingIdPrefix}${i}`);
-      }, 1000);
+        return;
+      })
+      .then(()=>{
+        setTimeout(()=>{
+          smoothScroll.scrollTo(`${landingIdPrefix}${i}`);
+        }, 1000);
+        setTimeout(()=>{
+          this.setState({spinner: false})
+        }, 2000);
+        return;
+      })
+      .catch(err=>{
+        console.error(err);
+      })
+
     } else {
       const activeIndices = {...this.state.activeIndices};
       activeIndices[`${i}`] = !activeIndices[`${i}`];
@@ -84,6 +147,171 @@ export default class Landing extends React.Component {
       fontStyle: 'italic',
       opacity: 0.8,
     };
+
+    const SpinnerComponent = 
+      spinnerOptions[this.state.spinnerIndex] || 
+      spinnerOptions[0];
+
+    const spinnerAnimationClass = 
+      spinnerAnimations[this.state.spinnerIndex] || 
+      spinnerAnimations[0];
+
+    const color1 =  colors[Math.floor(Math.random()*colors.length)];
+    const color2 =  colors[Math.floor(Math.random()*colors.length)];
+
+    const spinner = this.state.spinner ?
+      <div className='spinner'>
+        <div className={`spinner-inner ${spinnerAnimationClass}`}>
+          <SpinnerComponent style={{height:100,width: 100}}/>
+        </div>
+        <style jsx>{`
+          @keyframes spin1 {
+            0% {
+              -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+              color: ${color1};
+            }
+            100% {
+              -webkit-transform: rotate(360deg);
+              transform: rotate(360deg) scale(5);
+              color: ${color2};
+            }
+          }
+          @keyframes spin2 {
+            0% {
+              -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+              color: ${color1};
+            }
+            100% {
+              -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+              color: ${color2};
+            }
+          }
+          @keyframes spin3 {
+            0% {
+              -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+              color: ${color1};
+            }
+            100% {
+              -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+              color: ${color2};
+            }
+          }
+          @keyframes drop {
+            0% {
+              top: 0%;
+              left: 45%;
+              color: ${color2};
+            }
+            100% {
+              top: 120%;
+              left: 45%;
+              color: ${color1};
+              transform: scale(2);
+            }
+          }
+          @keyframes left {
+            0% {
+              top: 40%;
+              left: 0%;
+              color: ${color1};
+            }
+            25% {
+              top: 35%;
+              left: 35%;
+            }
+            50% {
+              top: 40%;
+              left: 60%;
+            }
+            75% {
+              top: 45%;
+              left: 95%;
+              color: ${color2};
+            }
+            100% {
+              top: 33%;
+              left: 120%;
+            }
+          }
+          @keyframes shake {
+            0% {
+              -webkit-transform: rotate(-5deg);
+              transform: rotate(-5deg);
+            }
+            100% {
+              -webkit-transform: rotate(5deg);
+              transform: rotate(5deg);
+            }
+          }
+          @keyframes pulse {
+            0% {
+              transform: scale(0.7);
+              color: ${color1};
+            }
+            100% {
+              transform: scale(1.5);
+              color: ${color2};
+            }
+          }
+          .spinner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+          }
+          .spinner-inner {
+            position: absolute;
+            height: 100px;
+            width: 100px;
+          }
+          .spin1 {
+            top: 45%;
+            left: 45%;
+            animation: spin1 1s infinite both;
+            color: ${color1};
+          }
+          .spin2 {
+            top: 30%;
+            left: 30%;
+            height: 25vw;
+            width: 25vw;
+            animation: spin2 1s infinite forwards;
+            color: ${color1};
+          }
+          .spin3 {
+            top: 45%;
+            left: 45%;
+            animation: spin3 1s infinite forwards;
+            color: ${color1};
+          }
+          .drop {
+            animation: drop 3s infinite forwards;
+            color: ${color1};
+          }
+          .left {
+            animation: left 3s infinite forwards;
+            color: ${color1};
+          }
+          .shake {
+            top: 45%;
+            left: 45%;
+            animation: shake 100ms infinite both;
+            color: ${color1};
+          }
+          .pulse {
+            top: 45%;
+            left: 45%;
+            animation: pulse 500ms infinite both;
+            color: ${color2};
+          }
+        `}</style>
+      </div> : null
 
     return <header className='landing'
       style={landingCss}>
@@ -186,6 +414,8 @@ export default class Landing extends React.Component {
         }
 
       </div>
+
+      {spinner}
 
       <FakeNavBar/>
 

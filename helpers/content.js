@@ -11,7 +11,7 @@ import { socialHandles }     from './content/social-handles';
 import sitemapDynamicObj     from './sitemap/sitemap-dynamic-object';
 
 /*
- * This file - with few, small exceptions - includes ALL "static" content for the Urban Meadow site, i.e. all content that is not a blog post or image or file.
+ * This file - with few, small exceptions - includes ALL "static" content for the site, i.e. all content that is not a blog post or image or file.
  * Blog posts and images are in the CMS.
  * Files (such as Word documents for spec downloads), are saved at ____ (currently TBD).
  * When editing this file MAINTAIN FILE STRUCTURE!!!

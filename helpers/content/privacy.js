@@ -6,13 +6,13 @@ export const privacy = {
   meta: {
     path:        'privacy',
     // limit title to 55 characters
-    h1Tag:       'Urban Meadow Terms & Conditions and Privacy Policy',
-    seoTitle:       'Urban Meadow Terms & Conditions and Privacy Policy',
+    h1Tag:       'BradGarner.com Terms & Conditions and Privacy Policy',
+    seoTitle:       'BradGarner.com Terms & Conditions and Privacy Policy',
     // limit description to 120-140 characters
     //            1        10        20        30        40        50        60        70        80        90        100       110        120        130        140
-    description: 'Urban Meadow Terms & Conditions and Privacy Policy.',
-    image:       'https://cdn.buttercms.com/uiVkVYL9TQK4r7e7cGMV',
-    alt:         'aster meadow groundcover with white flowers',
+    description: 'BradGarner.com Terms & Conditions and Privacy Policy.',
+    image:       'https://cdn.buttercms.com/Yjr3DEkLTy6E0QeAZqRq',
+    alt:         'Brad Garner in green roof research laboratory in front of outdoor monitoring platforms',
     hrefLang:    'en',
   },
   
@@ -22,7 +22,7 @@ export const privacy = {
     buttonLabel: 'Got It!',
     showMore: 'Show Options',
   },
-  theCompany: 'urbanmeadow.org',
+  theCompany: 'bradgarner.com',
   thisDomain,
   thisUrl,
   lastUpdate: 'August 1, 2020',

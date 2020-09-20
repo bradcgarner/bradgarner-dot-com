@@ -91,7 +91,7 @@ export const socialHandles = {
   grd: {
     main: {
       url: 'https://www.greenroofdiagnostics.com',
-      src: 'https://cdn.buttercms.com/4dpRGqRnTyWfcJMUp1XJ',
+      src: 'https://cdn.buttercms.com/AEtNJfcSDqtApTHmESml',
       alt: 'Green Roof Diagnostics logo',
       title: 'visit the Green Roof Diagnostics site',
     },
