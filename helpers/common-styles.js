@@ -58,9 +58,10 @@ export const fontReadingObject = {
 export const fontsToLoadArr = [
   'Poppins:300', 
   'Quicksand',
-  'Source+Sans+Pro', // normal
-  'Open+Sans:700', // blog menu
-  'Open+Sans+Condensed:300', // fine print
+  'Montserrat',
+  'Source+Sans+Pro',
+  'Open+Sans:700',
+  'Open+Sans+Condensed:300',
   'Roboto', // ONLY to check meta tags!!!
   // 'Anton',
   // 'Playfair+Display',

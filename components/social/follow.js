@@ -100,7 +100,7 @@ const platforms = [
   });
 
   if(socialHandles.main){
-    buttons.unshift(<div key={0} 
+    buttons.unshift(<div key='main' 
       className='social-icon-wrapper social-button main'
       style={{height: size, flexGrow: 0}}>
       <a href={socialHandles.main.url} target='_blank' 
