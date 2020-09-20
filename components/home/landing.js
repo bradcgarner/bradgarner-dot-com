@@ -21,6 +21,7 @@ import FakeNavBar         from '../_general/fake-nav-bar';
 import { createElements } from '../../helpers/html-cms/format-html';
 import SocialFollow       from '../social/follow';
 import { socialHandles }  from '../../helpers/content/social-handles';
+import ImageContainer from '../_general/image-container';
 
 const landingIdPrefix = 'landing-element-';
 
@@ -372,20 +373,9 @@ export default class Landing extends React.Component {
               onClick={()=>this.selectActiveIndex(i, cssWidthOuter)}
               className={`container-div ${activeContainerClass}`}>
               <div className={`image-container ${imageContainerClass}`} >
-                <LazyLoad offset={200} height={imageHeight}>
-                  {
-                    c.url ? <a href={c.url}
-                      title={c.urlTitle}
-                      target='_blank'>
-                       <img className='image' 
-                        src={c.src}
-                        alt={c.alt} />
-                    </a> :
-                    <img className='image' 
-                      src={c.src}
-                      alt={c.alt} />
-                  }
-                </LazyLoad>
+                <ImageContainer
+                  src={c.src}
+                  alt={c.alt} />
                 <h2 className={`element-title ${titleClass}`}>
                   {c.title}
                 </h2>
