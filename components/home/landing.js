@@ -1,5 +1,4 @@
 import React              from 'react';
-import LazyLoad           from 'react-lazyload';
 import {
   calcMinimumWindowDimensions, 
   smoothScroll }          from 'browser-helpers';
@@ -88,7 +87,13 @@ export default class Landing extends React.Component {
       .then(()=>{
         setTimeout(()=>{
           smoothScroll.scrollTo(`${landingIdPrefix}${i}`);
-        }, 1000);
+        }, 300);
+        setTimeout(()=>{
+          smoothScroll.scrollTo(`${landingIdPrefix}${i}`);
+        }, 600);
+        setTimeout(()=>{
+          smoothScroll.scrollTo(`${landingIdPrefix}${i}`);
+        }, 900);
         setTimeout(()=>{
           this.setState({spinner: false})
         }, 2000);
@@ -391,7 +396,7 @@ export default class Landing extends React.Component {
               <div className='element-text-container'
                 style={elementTextContainerCss}>
                 <h3 className={`short-text ${shortClass}`} >
-                  {c.shortText}
+                  {c.shortText}...
                 </h3>
                 <div className={`long-text ${longClass}`} >
                   {
@@ -418,6 +423,11 @@ export default class Landing extends React.Component {
           flex-direction: column;
           transition: all 2s;
           transition: padding 0s;
+        }
+        @media (min-width: 800px){
+          .container-div {
+            padding-left: 10vw;
+          }
         }
         .container-div-active {
           margin-top: 40px;
@@ -470,20 +480,20 @@ export default class Landing extends React.Component {
           position: absolute;
           top: -150vh;
           left: -200vw;
-          font-size: 100;
+          font-size: 100px;
           opacity: 0;
           margin: 0;
-          letter-spacing: 1em;
+          letter-spacing: 2em;
         }
         .short-text-inactive {
-          font-size: 24;
+          font-size: 20px;
           color: ${bgBlue5};
           position: ${cssWidthOuter > 500 ? 'absolute' : 'relative'};
           opacity: 1;
           top: 0;
           left: 0;
           margin: 0;
-          letter-spacing: initial;
+          letter-spacing: 0.3em;
         }
         .long-text {
           flex-direction: column;

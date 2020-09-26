@@ -44,18 +44,6 @@ app.prepare()
         return res.redirect(301, thisUrl + req.originalUrl);
       }
 
-      // let needsRedirect = false;
-
-      // const aliasRedirects = ['www.urban-meadow.org'];
-      // aliasRedirects.forEach(url=>{
-      //   if(requstedUrl === url){
-      //     needsRedirect = true;
-      //   }
-      // });
-      // if(needsRedirect){
-      //   return res.redirect(301, thisUrl + req.originalUrl);
-      // }
-
       return next();
     });
 
