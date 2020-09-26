@@ -38,7 +38,7 @@ app.prepare()
       // Don't allow user to hit Heroku now that we have a domain
       const requstedUrl = req.get('Host');
       // console.log('requestedUrl', requstedUrl);
-      const herokuUrl = 'urban-meadow.herokuapp.com';
+      const herokuUrl = 'bradgarner.herokuapp.com';
       if (requstedUrl === herokuUrl ) {
         // console.log('**** SHOULD REDIRECT requested host', requstedUrl, '>>> herokuUrl', herokuUrl, '>>> thisUrl', thisUrl, '>>> req.originalUrl',req.originalUrl);
         return res.redirect(301, thisUrl + req.originalUrl);
